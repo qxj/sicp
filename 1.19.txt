@@ -1,0 +1,18 @@
+
+T:
+a <- bq + aq + ap
+b <- bp + aq
+
+T':
+a <- (bp + aq)q + (bq + aq + ap)q + (bq + aq + ap)p
+  <- 2bpq + 2aqq + 2apq + bqq + app
+  <- b(2pq + qq) + a(2qq + 2pq + pp)
+  <- b(2pq + qq) + a(2pq + qq) + a(pp + qq)
+b <- (bp + aq)p + (bq + aq + ap)q
+  <- bpp + bqq + aqq + 2apq
+  <- b(pp + qq) + a(2pq + qq)
+
+=>
+
+p' = pp + qq
+q' = 2pq + qq

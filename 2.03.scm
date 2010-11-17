@@ -1,0 +1,41 @@
+(define (print-point p)
+  (newline)
+  (display "(")
+  (display (x-point p))
+  (display ",")
+  (display (y-point p))
+  (display ")"))
+
+(define (make-point x y) (cons x y))
+(define (x-point p) (car p))
+(define (y-point p) (cdr p))
+
+(define (make-segment p1 p2) (cons p1 p2))
+(define (start-segment s) (car s))
+(define (end-segment s) (cdr s))
+
+(define (segment-length s)
+  (define (square n)
+    (* n n))
+  (sqrt (+ (square (abs (- (x-point (start-segment s))
+                           (x-point (end-segment s)))))
+           (square (abs (- (y-point (start-segment s))
+                           (y-point (end-segment s))))))))
+
+(define (make-rectangle s1 s2) (cons s1 s2))
+(define (rect-width r) (segment-length (car r)))
+(define (rect-height r) (segment-length (cdr r)))
+
+(define (rect-perimeter r)
+  (* 2 (+ (rect-width r) (rect-height r))))
+
+(define (rect-area r)
+  (* (rect-width r) (rect-height r)))
+
+(let* ((p1 (make-point 0 0))
+       (p2 (make-point 2 0))
+       (p3 (make-point 0 2))
+       (s1 (make-segment p1 p2))
+       (s2 (make-segment p1 p3))
+       (r (make-rectangle s1 s2)))
+  (rect-perimeter r))

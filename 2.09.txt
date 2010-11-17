@@ -1,0 +1,21 @@
+## Proof 1
+
+the width of the sum (or difference) of two intervals is a function
+only of the widths of the intervals being added (or subtracted).
+
+x: (xl, xu)
+y: (yl, yu)
+
+width(x) = (xu-xl)/2
+width(y) = (yu-yl)/2
+
+x+y: (xl+yl, xu+yu)
+
+width(x+y) = ((xu+yu)-(xl+yl))/2
+           = (xu-xl)/2+(yu-yl)/2
+           = width(x) + width(y)
+
+x-y: (xl-yu, xu-yl)
+width(x-y) = ((xu-yl)-(xl-yu))/2
+           = (xu-xl)/2+(yu-yl)/2
+           = width(x) + width(y)

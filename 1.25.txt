@@ -1,0 +1,4 @@
+
+Both O(log n).
+
+However, (fast-expt base exp) will generate a huge number more easily, it will be much slower than original expmod and even cause integer overflow.

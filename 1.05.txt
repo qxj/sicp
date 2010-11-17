@@ -1,0 +1,8 @@
+
+applicative-order:
+
+Firstly evaluate (define (p) (p)), it would cause infinite recursion.
+
+normal-order:
+
+0

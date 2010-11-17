@@ -1,0 +1,2 @@
+
+applicative-order will evaluate argumets firstly, thus new-if will evalute sqrt-iter in else-clause firstly, it will cause infinite recursion.

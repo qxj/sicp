@@ -1,0 +1,2 @@
+
+(expmod base (/ exp 2) m) is computed twice at each step rather than once, thus expmod does not halve the problem size at each step.
